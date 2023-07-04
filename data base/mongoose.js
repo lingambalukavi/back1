@@ -1,13 +1,13 @@
-const mongoose =require ('mongoose');
+const mongoose = require('mongoose');
 
-mongoose.Promise=global.Promise;
+mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://127.0.0.1:27017/taskmanagerrdb')
-.then(()=>{
-    console.log("db connected succssfullly")
-})
+mongoose.connect('mongodb://127.0.0.1:27017', { useNewUrlParser: true, useUnifiedTopology: true, /* useFindAndModify: false*/})
+    .then(() => {
+        console.log("DB Connected Sucessfully!")
+    })
+    .catch((error) => {
+        console.log("Error occurred while DB connection", error)
+    });
 
-.catch((error)=>{
-    console.log(error,"db is not connected")
-})
-module.export= mongoose;
+module.exports = mongoose;

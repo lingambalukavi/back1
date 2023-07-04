@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
-const tasklistschema =new mongoose.Schema({
-    title:{
-        type:String,
-        trim:true,
+
+const TaskListSchema = new mongoose.Schema({
+    title: {
+        type: String,
+        trim: true,
         minlength:3
     }
 });
- 
-const tasklist=mongoose.model('tasklist',tasklistschema);
 
-module.exports=tasklist;
+const TaskList = mongoose.model('TaskList', TaskListSchema);
+
+module.exports = TaskList;
